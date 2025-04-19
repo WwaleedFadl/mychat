@@ -31,13 +31,11 @@ const MessageInput = () => {
   const handleSendMessage = async (e) => {
     e.preventDefault();
     if (!text.trim() && !imagePreview) return;
-
     try {
       await sendMessage({
         text: text.trim(),
         image: imagePreview,
       });
-
       // Clear form
       setText("");
       setImagePreview(null);
@@ -68,7 +66,6 @@ const MessageInput = () => {
           </div>
         </div>
       )}
-
       <form onSubmit={handleSendMessage} className="flex items-center gap-2">
         <div className="flex-1 flex gap-2">
           <input
@@ -106,4 +103,5 @@ const MessageInput = () => {
     </div>
   );
 };
+
 export default MessageInput;
